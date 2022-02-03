@@ -1,6 +1,6 @@
 {{ if .Vars.linuxcis_level1 }}
 command:
-  {{ if .Vars.linuxcis_rule_1_1_1_1 }}
+  {{ if .Vars.SEC_ID_ENSURE_FS_CRAMFS_DISABLED }}
   cramfs:
     title: 1.1.1.1 | L1 | Ensure mounting of cramfs filesystems is disabled
     exit-status: 0
@@ -17,7 +17,7 @@ command:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.linuxcis_rule_1_1_1_3 }}
+  {{ if .Vars.SEC_ID_ENSURE_FS_UDF_DISABLED }}
   udf:
     title: 1.1.1.3 | L1 | Ensure mounting of udf filesystems is disabled
     exit-status: 0
@@ -36,7 +36,7 @@ command:
   {{ end }}
 {{ end }}
 {{ if .Vars.linuxcis_level2 }}
-  {{ if .Vars.linuxcis_rule_1_1_1_2 }}
+  {{ if .Vars.SEC_ID_ENSURE_FS_SQUASHFS_DISABLED }}
   squashfs:
     title: 1.1.1.2 | L2 | Ensure mounting of squashfs filesystems is disabled
     exit-status: 0
