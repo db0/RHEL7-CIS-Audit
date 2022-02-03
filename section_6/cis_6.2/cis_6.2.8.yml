@@ -1,5 +1,5 @@
 {{ if .Vars.rhel7cis_level1 }}
-  {{ if .Vars.rhel7cis_rule_6_2_8 }}
+  {{ if .Vars.SEC_ID_ENSURE_NO_DUPLICATE_GIDS }}
 command:
   no_dup_gid:
     title: 6.2.8 | L1 | Ensure no duplicate GIDs exist
@@ -10,7 +10,7 @@ command:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 6.2.8
       CISv8:
       - 4.1

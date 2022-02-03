@@ -1,6 +1,6 @@
 {{ if .Vars.run_heavy_tests }}
   {{ if .Vars.rhel7cis_level2 }}
-    {{ if .Vars.rhel7cis_rule_6_1_1 }}
+    {{ if .Vars.SEC_ID_AUDIT_SYSTEM_FILE_PERMISSIONS }}
 command:
   rpm_filecheck:
     title: 6.1.1 | L2 | Audit system file permissions
@@ -12,7 +12,7 @@ command:
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 6.1.1
       CISv8:
       - 3.3
