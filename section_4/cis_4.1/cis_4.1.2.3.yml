@@ -4,9 +4,9 @@ file:
     title: 4.1.2.3 | L2 | Ensure system is disabled when audit logs are full
     exists: true
     contains:
-    - space_left_action = {{ .Vars.rhel7cis_auditd.space_left_action }}
-    - action_mail_acct = {{ .Vars.rhel7cis_auditd.action_mail_acct }}
-    - '/^admin_space_left_action = {{ .Vars.rhel7cis_auditd.admin_space_left_action }}/'
+    - space_left_action = {{ .Vars.linuxcis_auditd.space_left_action }}
+    - action_mail_acct = {{ .Vars.linuxcis_auditd.action_mail_acct }}
+    - '/^admin_space_left_action = {{ .Vars.linuxcis_auditd.admin_space_left_action }}/'
     meta:
       server: 2
       workstation: 2

@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_level1 }}
+{{ if .Vars.linuxcis_level1 }}
 mount:
   {{ if .Vars.SEC_ID_CONFIGURE_TMP }}
   /tmp:
@@ -105,7 +105,7 @@ mount:
       CISv8_IG3: true
   {{ end }}
 {{ end }}
-{{ if .Vars.rhel7cis_level2 }}
+{{ if .Vars.linuxcis_level2 }}
   {{ if .Vars.SEC_ID_SEPARATE_VAR }}
   /var:
     title: 1.1.10 | L2 | Ensure separate partition exists for /var

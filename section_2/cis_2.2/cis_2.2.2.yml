@@ -1,5 +1,5 @@
-{{ if not .Vars.rhel7cis_xwindows_required }}
-  {{ if .Vars.rhel7cis_level1 }}
+{{ if not .Vars.linuxcis_xwindows_required }}
+  {{ if .Vars.linuxcis_level1 }}
     {{ if .Vars.SEC_ID_X11_COMPONENTS_NOT_INSTALLED }}
 package:
   xorgs-x11-servers:

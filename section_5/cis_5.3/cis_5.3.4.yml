@@ -1,12 +1,12 @@
-{{ if .Vars.rhel7cis_level1 }}
+{{ if .Vars.linuxcis_level1 }}
   {{ if .Vars.SEC_ID_ENSURE_SSH_ACCESS_LIMITED }}
-   {{ if .Vars.rhel7cis_sshd_limited }}
+   {{ if .Vars.linuxcis_sshd_limited }}
 file:
   /etc/ssh/sshd_config:
     title: 5.3.4 | L1 | Ensure SSH access is limited
     exists: true
     contains:
-    {{ range .Vars.rhel7cis_sshd_access }}
+    {{ range .Vars.linuxcis_sshd_access }}
     - {{ . }}
     {{ end }}
     meta:

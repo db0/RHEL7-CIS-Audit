@@ -1,6 +1,6 @@
 # CIS for NTP
-{{ if eq .Vars.rhel7cis_time_synchronization "ntp" }}
-  {{ if .Vars.rhel7cis_level1 }}
+{{ if eq .Vars.linuxcis_time_synchronization "ntp" }}
+  {{ if .Vars.linuxcis_level1 }}
     {{ if .Vars.SEC_ID_ENSURE_TIME_SYNCHRONIZATION_IN_USE }}
 package:
   ntp:

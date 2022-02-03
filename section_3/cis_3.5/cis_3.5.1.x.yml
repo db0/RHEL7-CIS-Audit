@@ -1,5 +1,5 @@
-{{ if .Vars.rhel7cis_level1 }}
-{{ if eq .Vars.rhel7cis_firewall "firewalld" }}
+{{ if .Vars.linuxcis_level1 }}
+{{ if eq .Vars.linuxcis_firewall "firewalld" }}
   {{ if .Vars.SEC_ID_ENSURE_FIREWALLD_INSTALLED }}
 package:
   firewalld:
@@ -44,7 +44,7 @@ package:
       CISv8_IG1: true
       CISv8_IG2: true
       CISv8_IG3: true
-    {{ if .Vars.rhel7cis_ipv6_required }}
+    {{ if .Vars.linuxcis_ipv6_required }}
   ip6tables-services:
     title: 3.5.1.2 | L1 | Ensure iptables-services not installed with firewalld | IPv6
     installed: false
@@ -117,7 +117,7 @@ command:
     exec: firewall-cmd --get-default-zone
     exit-status: 0
     stdout:
-    - '{{ .Vars.rhel7cis_default_firewall_zone }}'
+    - '{{ .Vars.linuxcis_default_firewall_zone }}'
     meta:
       server: 1
       workstation: 1
@@ -134,7 +134,7 @@ command:
     title: 3.5.1.6 | L1 | Ensure network interfaces are assigned to appropriate zone
     exec:  "nmcli -t connection show | awk -F ':' '{if($4){print $4}}' | while read INT; do firewall-cmd --get-active-zones | grep -B1 $INT; done"
     exit-status: 0
-    {{ range .Vars.rhel7cis_firewall_interface }}
+    {{ range .Vars.linuxcis_firewall_interface }}
     stdout: {{ . }}
     {{ end }}
     meta:

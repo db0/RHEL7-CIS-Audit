@@ -1,5 +1,5 @@
 {{ if .Vars.run_heavy_tests }}
-  {{ if .Vars.rhel7cis_level1 }}
+  {{ if .Vars.linuxcis_level1 }}
     {{ if .Vars.SEC_ID_UPDATES_AND_PATCHES }}
 command:
   security-updates:

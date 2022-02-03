@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_level1 }}
+{{ if .Vars.linuxcis_level1 }}
   {{ if .Vars.SEC_ID_ENSURE_USERS_DOTFILE_PERMS }}
 command:
   dot_file_perms:

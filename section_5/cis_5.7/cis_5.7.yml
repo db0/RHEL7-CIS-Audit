@@ -1,14 +1,14 @@
-{{ if .Vars.rhel7cis_level1 }}
+{{ if .Vars.linuxcis_level1 }}
   {{ if .Vars.SEC_ID_ENSURE_SU_COMMAND_RESTRICTED }}
 file:
   /etc/pam.d/su:
     title: 5.7 | L1 | Ensure access to the su command is restricted| pam.d/su
     exists: true
     contains:
-      {{ if eq .Vars.rhel7cis_sugroup "wheel" }}
+      {{ if eq .Vars.linuxcis_sugroup "wheel" }}
       - '/^auth.*required.*pam_wheel.so\suse_uid/'
       {{ else }}
-      - '/^auth.*required.*pam_wheel.so\suse_uid$\sgroup={{ .Vars.rhel7cis_sugroup }}/'
+      - '/^auth.*required.*pam_wheel.so\suse_uid$\sgroup={{ .Vars.linuxcis_sugroup }}/'
       {{ end }}
     meta:
       server: 1
@@ -24,7 +24,7 @@ file:
     title: 5.7 | L1 | Ensure access to the su command is restricted | /etc/group
     exists: true
     contains:
-    - '/^{{ .Vars.rhel7cis_sugroup }}:x:10:vagrant,root$/'
+    - '/^{{ .Vars.linuxcis_sugroup }}:x:10:vagrant,root$/'
     meta:
       server: 1
       workstation: 1

@@ -1,12 +1,12 @@
-{{ if .Vars.rhel7cis_level1 }}
+{{ if .Vars.linuxcis_level1 }}
   {{ if .Vars.SEC_ID_ENSURE_STRONG_KEY_EXCHANGE_ALGORITHMS }}
 file:
   /etc/ssh/sshd_config:
     title: 5.3.15 | L1 | Ensure only strong Key Exchange algorithms are used
     exists: true
     contains:
-    - {{ .Vars.rhel7cis_ssh_strong_kex }}
-    {{ range .Vars.rhel7cis_ssh_weak_kex }}
+    - {{ .Vars.linuxcis_ssh_strong_kex }}
+    {{ range .Vars.linuxcis_ssh_weak_kex }}
     - !{{ . }}
     {{ end }}
     meta:

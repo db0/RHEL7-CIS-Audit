@@ -26,7 +26,7 @@ kernel-param:
       CISv8_IG1: true
       CISv8_IG2: true
       CISv8_IG3: true
-  {{ if .Vars.rhel7cis_ipv6_required }}
+  {{ if .Vars.linuxcis_ipv6_required }}
   net.ipv6.conf.all.accept_redirects:
     title: 3.3.2 | L1 | Ensure ICMP redirects are not accepted | IPv6
     value: '0'

@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_level1 }}
+{{ if .Vars.linuxcis_level1 }}
   {{ if .Vars.SEC_ID_ENSURE_AT_RESTRICTED }}
 file:
   /etc/at.deny:

@@ -1,19 +1,19 @@
-{{ if .Vars.rhel7cis_level1 }}
+{{ if .Vars.linuxcis_level1 }}
   {{ if .Vars.SEC_ID_BOOT_PASSWORD }}
 file:
-  {{ .Vars.rhel7cis_bootloader_user }}:
+  {{ .Vars.linuxcis_bootloader_user }}:
     title: 1.4.1 | L1 | Ensure bootloader password is set and permissions | efi
     exists: true
     owner: root
     group: root
-  {{ if .Vars.rhel7cis_legacy_boot }}
+  {{ if .Vars.linuxcis_legacy_boot }}
     mode: "0600"
   {{ end }}
-  {{ if not .Vars.rhel7cis_legacy_boot }}
+  {{ if not .Vars.linuxcis_legacy_boot }}
     mode: "0700"
   {{ end }}
-      {{ if .Vars.rhel7cis_set_boot_pass }}
-    contains: [GRUB2_PASSWORD={{ .Vars.rhel7cis_bootloader_password }}]
+      {{ if .Vars.linuxcis_set_boot_pass }}
+    contains: [GRUB2_PASSWORD={{ .Vars.linuxcis_bootloader_password }}]
       {{ end }}
     meta:
       server: 1

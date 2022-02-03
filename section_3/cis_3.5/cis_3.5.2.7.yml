@@ -1,5 +1,5 @@
-{{ if .Vars.rhel7cis_level1 }}
-{{ if eq .Vars.rhel7cis_firewall "nftables" }}
+{{ if .Vars.linuxcis_level1 }}
+{{ if eq .Vars.linuxcis_firewall "nftables" }}
   {{ if .Vars.SEC_ID_ENSURE_NFTABLES_LOOPBACK_TRAFFIC_CONFIGURED }}
 command:
   nft_IPv4_local:
@@ -32,7 +32,7 @@ command:
      CISv8_IG1: true
      CISv8_IG2: true
      CISv8_IG3: true
-  {{ if .Vars.rhel7cis_ipv6_required }}
+  {{ if .Vars.linuxcis_ipv6_required }}
   nft_IPv6_local:
    title: 3.5.2.7 | L1 | Ensure loopback traffic configured
    exec: nft list ruleset | awk '/hook input/,/}/' | grep 'ip6 saddr'

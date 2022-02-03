@@ -1,11 +1,11 @@
-{{ if .Vars.rhel7cis_level1 }}
+{{ if .Vars.linuxcis_level1 }}
   {{ if .Vars.SEC_ID_ENSURE_PASSWORD_CREATION_REQS }}
 file:
   /etc/security/pwquality.conf:
     title: 5.4.1 | L1 | Ensure password creation requirements are configured | pwquality
     exists: true
     contains:
-    {{ range .Vars.rhel7cis_pam_password }}
+    {{ range .Vars.linuxcis_pam_password }}
     - {{ . }}
     {{ end }}
     meta:
@@ -21,9 +21,9 @@ file:
   /etc/pam.d/password-auth:
     title: 5.4.1 | L1 | Ensure password creation requirements are configured | password-auth
     exists: true
-    skip: {{ .Vars.skip_rhel7cis_pam_passwd_auth }}
+    skip: {{ .Vars.skip_linuxcis_pam_passwd_auth }}
     contains:
-    - password requisite pam_pwquality.so try_first_pass retry={{ .Vars.rhel7cis_pam_passwd_retry }}
+    - password requisite pam_pwquality.so try_first_pass retry={{ .Vars.linuxcis_pam_passwd_retry }}
     meta:
       server: 1
       workstation: 1
@@ -37,9 +37,9 @@ file:
   /etc/pam.d/system-auth:
     title: 5.4.1 | L1 | Ensure password creation requirements are configured | ystem-auth
     exists: true
-    skip: {{ .Vars.skip_rhel7cis_pam_system_auth }}
+    skip: {{ .Vars.skip_linuxcis_pam_system_auth }}
     contains:
-    - password requisite pam_pwquality.so try_first_pass retry={{ .Vars.rhel7cis_pam_passwd_retry }}
+    - password requisite pam_pwquality.so try_first_pass retry={{ .Vars.linuxcis_pam_passwd_retry }}
     meta:
       server: 1
       workstation: 1

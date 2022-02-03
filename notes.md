@@ -23,7 +23,7 @@ goss -g {{ goss file }} --vars vars.cis.yml
 e.g.
 
 ```sh
-rhel7cis_rule_1_1_1: true
+linuxcis_rule_1_1_1: true
 passwd_age: "10"   #Int wrapped in quotes
 users:
 - bob
@@ -48,9 +48,9 @@ These are surrounded by curly brace.
 ### Boolean value
 
 ```sh
-{{ if .Vars.rhel7cis_rule_1_1_1 }}
+{{ if .Vars.linuxcis_rule_1_1_1 }}
 put you're test in between
-the 
+the
 start and stop statements
 {{ end }}
 ```
@@ -78,9 +78,9 @@ note it does use Or/AND as expected so use variable precidence in settings.
 
 ```sh
 {{ if eq .Vars.somevalue 'OK' }}
-  {{ if Vars.rhel7cis_rule_1_1_1 }}
+  {{ if Vars.linuxcis_rule_1_1_1 }}
 goss requirements
-placed in 
+placed in
 here
 {{ end }}
 ```
@@ -112,7 +112,7 @@ Expect an empty response from command
 e.g.
 
 ```sh
-{{ if .Vars.rhel7cis_rule_1_1_1 }}
+{{ if .Vars.linuxcis_rule_1_1_1 }}
 file:
   /etc/users:
     exists: true

@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_level1 }}
+{{ if .Vars.linuxcis_level1 }}
   {{ if .Vars.run_heavy_tests }}
         {{ if .Vars.SEC_ID_AUDIT_SGID_EXECUTABLES }}
 command:

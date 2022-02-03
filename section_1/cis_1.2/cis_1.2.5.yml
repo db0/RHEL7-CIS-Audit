@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_level2 }}
+{{ if .Vars.linuxcis_level2 }}
   {{ if .Vars.SEC_ID_DISABLE_RHNSD }}
 service:
   rhnsd:

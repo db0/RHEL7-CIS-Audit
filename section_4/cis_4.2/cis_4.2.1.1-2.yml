@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_rsyslog }}
+{{ if .Vars.linuxcis_rsyslog }}
   {{ if .Vars.SEC_ID_ENSURE_RSYSLOG_INSTALLED }}
 package:
   rsyslog:

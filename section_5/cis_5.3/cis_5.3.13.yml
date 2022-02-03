@@ -1,12 +1,12 @@
-{{ if .Vars.rhel7cis_level1 }}
+{{ if .Vars.linuxcis_level1 }}
   {{ if .Vars.SEC_ID_ENSURE_STRONG_CIPHERS }}
 file:
   /etc/ssh/sshd_config:
     title: 5.3.13 | L1 | Ensure only strong Ciphers are used
     exists: true
     contains:
-    - {{ .Vars.rhel7cis_ssh_strong_ciphers }}
-    {{ range .Vars.rhel7cis_ssh_weak_ciphers }}
+    - {{ .Vars.linuxcis_ssh_strong_ciphers }}
+    {{ range .Vars.linuxcis_ssh_weak_ciphers }}
     - !{{ . }}
     {{ end }}
     meta:

@@ -1,4 +1,4 @@
-{{ if eq .Vars.rhel7cis_firewall "iptables" }}
+{{ if eq .Vars.linuxcis_firewall "iptables" }}
   {{ if .Vars.SEC_ID_ENSURE_IPTABLES_INSTALLED }}
 package:
   iptables:

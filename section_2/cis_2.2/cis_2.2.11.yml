@@ -1,5 +1,5 @@
-{{ if not .Vars.rhel7cis_smb_server }}
-  {{ if .Vars.rhel7cis_level1 }}
+{{ if not .Vars.linuxcis_smb_server }}
+  {{ if .Vars.linuxcis_level1 }}
     {{ if .Vars.SEC_ID_SAMBA_SERVER_NOT_INSTALLED }}
 package:
   samba:

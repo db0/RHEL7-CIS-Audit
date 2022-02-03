@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_level2 }}
+{{ if .Vars.linuxcis_level2 }}
   {{ if .Vars.SEC_ID_ENSURE_SCTP_DISABLED }}
 command:
   modprobe_sctp:

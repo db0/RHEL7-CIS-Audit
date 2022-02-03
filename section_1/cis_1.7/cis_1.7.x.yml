@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_level1 }}
+{{ if .Vars.linuxcis_level1 }}
 file:
   {{ if .Vars.SEC_ID_ENSURE_MOTD_CONFIGURED }}
   /etc/motd:

@@ -1,6 +1,6 @@
-{{ if .Vars.rhel7cis_level1 }}
+{{ if .Vars.linuxcis_level1 }}
   {{ if .Vars.SEC_ID_ENSURE_ROUTER_ADVERTISEMENTS_NOT_ACCEPTED }}
-    {{ if .Vars.rhel7cis_ipv6_required }}
+    {{ if .Vars.linuxcis_ipv6_required }}
 kernel-param:
   net.ipv6.conf.all.accept_ra:
     title: 3.3.9 | L1 | Ensure IPv6 router advertisements are not accepted | all

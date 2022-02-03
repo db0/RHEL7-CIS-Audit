@@ -1,6 +1,6 @@
-{{ if not .Vars.rhel7cis_nfs_server }}
+{{ if not .Vars.linuxcis_nfs_server }}
   {{ if .Vars.SEC_ID_NFS_UTILS_NOT_INSTALLED  }}
-    {{ if .Vars.rhel7cis_level1 }}
+    {{ if .Vars.linuxcis_level1 }}
 package:
   nfs-utils:
     title: 2.2.17 | L1 | Ensure nfs-utils is not installed or the nfs-server service is masked | Installed
