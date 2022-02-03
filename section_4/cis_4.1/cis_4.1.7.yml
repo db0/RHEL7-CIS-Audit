@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_rule_4_1_7 }}
+{{ if .Vars.SEC_ID_ENSURE_LOGIN_LOGOUT_EVENTS_COLLECTED }}
 command:
   auditd_logins_cnf:
     title: 4.1.7 | L2 | Ensure login and logout events are collected | Config
@@ -16,7 +16,7 @@ command:
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 4.1.7
       CISv8:
       - 8.5
@@ -39,7 +39,7 @@ command:
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 4.1.7
       CISv8:
       - 8.5

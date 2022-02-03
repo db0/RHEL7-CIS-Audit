@@ -1,6 +1,6 @@
 {{ if not .Vars.rhel7cis_vsftpd_server}}
   {{ if .Vars.rhel7cis_level1 }}
-    {{ if .Vars.rhel7cis_rule_2_2_8 }}
+    {{ if .Vars.SEC_ID_FTP_SERVER_NOT_INSTALLED }}
 package:
   vsftpd:
     title: 2.2.8 | L1 | Ensure FTP Server is not installed
@@ -8,7 +8,7 @@ package:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 2.2.8
       CISv8:
       - 4.8

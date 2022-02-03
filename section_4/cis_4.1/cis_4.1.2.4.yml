@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_rule_4_1_2_4 }}
+{{ if .Vars.SEC_ID_ENSURE_AUDIT_BACKLOG_LIMIT_SUFFICIENT }}
 file:
   /etc/default/grub:
     exists: true
@@ -7,7 +7,7 @@ file:
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 4.1.2.1
       CISv8:
       - 8.2

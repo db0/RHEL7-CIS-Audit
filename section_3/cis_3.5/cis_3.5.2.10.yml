@@ -1,6 +1,6 @@
 {{ if .Vars.rhel7cis_level1 }}
 {{ if eq .Vars.rhel7cis_firewall "nftables" }}
-  {{ if .Vars.rhel7cis_rule_3_5_2_10 }}
+  {{ if .Vars.SEC_ID_ENSURE_NFTABLES_SERVICE_ENABLED }}
 service:
   nftables:
    title: 3.5.2.10 | L1 | Ensure nftables service is enabled
@@ -8,7 +8,7 @@ service:
    meta:
      server: 1
      workstation: 1
-     CIS_ID: 
+     CIS_ID:
      - 3.5.2.10
      CISv8:
      - 4.4

@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_rule_3_3_4 }}
+{{ if .Vars.SEC_ID_ENSURE_SUSPICIOUS_PACKETS_LOGGED }}
 kernel-param:
   net.ipv4.conf.all.log_martians:
     title: 3.3.4 | L1 | Ensure suspicious packets are logged | all
@@ -6,7 +6,7 @@ kernel-param:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 3.3.4
       CISv8:
       - 8.5
@@ -19,7 +19,7 @@ kernel-param:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 3.3.4
       CISv8:
       - 8.5

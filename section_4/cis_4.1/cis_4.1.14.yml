@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_rule_4_1_14 }}
+{{ if .Vars.SEC_ID_ENSURE_SUDOERS_CHANGES_COLLECTED }}
 command:
   auditd_admin_scope_cnf:
     title: 4.1.14 | L2 | Ensure changes to system administration scope (sudoers) is collected | Config
@@ -10,7 +10,7 @@ command:
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 4.1.14
       CISv8:
       - 8.5
@@ -27,7 +27,7 @@ command:
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 4.1.14
       CISv8:
       - 8.5
@@ -35,4 +35,3 @@ command:
       CISv8_IG2: true
       CISv8_IG3: true
 {{ end }}
-

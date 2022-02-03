@@ -1,14 +1,14 @@
 {{ if .Vars.rhel7cis_level1 }}
 package:
   {{ if not .Vars.rhel7cis_ypbind_required }}
-    {{ if .Vars.rhel7cis_rule_2_3_1 }}
+    {{ if .Vars.SEC_ID_ENSURE_NIS_CLIENT_NOT_INSTALLED }}
   ypbind:
     title: 2.3.1 | L1 | Ensure NIS Client is not installed
     installed: false
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 2.3.1
       CISv8:
       - 4.8
@@ -18,14 +18,14 @@ package:
     {{ end }}
   {{ end }}
   {{ if not .Vars.rhel7cis_rsh_required }}
-    {{ if .Vars.rhel7cis_rule_2_3_2 }}
+    {{ if .Vars.SEC_ID_ENSURE_RSH_CLIENT_NOT_INSTALLED }}
   rsh:
     title: 2.3.2 | L1 | Ensure rsh client is not installed
     installed: false
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 2.3.2
       CISv8:
       - 4.8
@@ -35,14 +35,14 @@ package:
     {{ end }}
   {{ end }}
   {{ if not .Vars.rhel7cis_talk_required }}
-    {{ if .Vars.rhel7cis_rule_2_3_3 }}
+    {{ if .Vars.SEC_ID_ENSURE_TALK_CLIENT_NOT_INSTALLED }}
   talk:
     title: 2.3.3 | L1 | Ensure talk client is not installed
     installed: false
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 2.3.3
       CISv8:
       - 4.8
@@ -52,14 +52,14 @@ package:
     {{ end }}
   {{ end }}
   {{ if not .Vars.rhel7cis_telnet_required }}
-    {{ if .Vars.rhel7cis_rule_2_3_4 }}
+    {{ if .Vars.SEC_ID_ENSURE_TELNET_CLIENT_NOT_INSTALLED }}
   telnet:
     title: 2.3.4 | L1 | Ensure telnet client is not installed
     installed: false
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 2.3.4
       CISv8:
       - 4.8
@@ -69,14 +69,14 @@ package:
     {{ end }}
   {{ end }}
   {{ if not .Vars.rhel7cis_openldap_clients_required }}
-    {{ if .Vars.rhel7cis_rule_2_3_5 }}  
+    {{ if .Vars.SEC_ID_ENSURE_LDAP_CLIENT_NOT_INSTALLED }}
   openldap-clients:
     title: 2.3.5 | L1 | Ensure LDAP client is not installed
     installed: false
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 2.3.5
       CISv8:
       - 4.8

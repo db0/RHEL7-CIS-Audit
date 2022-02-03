@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_rule_4_1_13 }}
+{{ if .Vars.SEC_ID_ENSURE_FILE_DELETION_EVENTS_COLLECTED }}
 command:
   auditd_delete_cnf:
     title: 4.1.13 | L2 | Ensure file deletion events by users are collected | Conf
@@ -10,7 +10,7 @@ command:
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 4.1.13
       CISv8:
       - 8.5
@@ -27,7 +27,7 @@ command:
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 4.1.13
       CISv8:
       - 8.5

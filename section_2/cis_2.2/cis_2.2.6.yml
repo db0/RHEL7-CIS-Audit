@@ -1,6 +1,6 @@
 {{ if not .Vars.rhel7cis_ldap_server }}
   {{ if .Vars.rhel7cis_level1 }}
-    {{ if .Vars.rhel7cis_rule_2_2_6 }}
+    {{ if .Vars.SEC_ID_LDAP_SERVER_NOT_INSTALLED }}
 package:
   openldap-servers:
     title: 2.2.6 | L1 | Ensure LDAP server is not installed
@@ -8,7 +8,7 @@ package:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 2.2.6
       CISv8:
       - 4.8

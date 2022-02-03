@@ -1,23 +1,23 @@
 {{ if .Vars.rhel7cis_level1 }}
 mount:
-  {{ if .Vars.rhel7cis_rule_1_1_2 }}
+  {{ if .Vars.SEC_ID_CONFIGURE_TMP }}
   /tmp:
     title: 1.1.2_5 | L1 | Ensure /tmp is configured with mount options
     exists: true
     opts:
-    {{ if .Vars.rhel7cis_rule_1_1_3 }} 
+    {{ if .Vars.SEC_ID_CONFIGURE_TMP_NODEV }}
     - noexec
     {{ end }}
-    {{ if .Vars.rhel7cis_rule_1_1_4 }}
+    {{ if .Vars.SEC_ID_CONFIGURE_TMP_NOSUID }}
     - nodev
     {{ end }}
-    {{ if .Vars.rhel7cis_rule_1_1_5 }}
+    {{ if .Vars.SEC_ID_CONFIGURE_TMP_NOEXEC }}
     - nosuid
     {{ end }}
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 1.1.2
       - 1.1.3
       - 1.1.4
@@ -29,24 +29,24 @@ mount:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rhel7cis_rule_1_1_6 }}
+  {{ if .Vars.SEC_ID_CONFIGURE_SHM }}
   /dev/shm:
     title: 1.1.6_9 | L1 | Ensure /dev/shm is configured
     exists: true
     opts:
-    {{ if .Vars.rhel7cis_rule_1_1_7 }}
+    {{ if .Vars.SEC_ID_CONFIGURE_SHM_NODEV }}
     - noexec
     {{ end }}
-    {{ if .Vars.rhel7cis_rule_1_1_8 }}
+    {{ if .Vars.SEC_ID_CONFIGURE_SHM_NOSUID }}
     - nodev
     {{ end }}
-    {{ if .Vars.rhel7cis_rule_1_1_9 }}
+    {{ if .Vars.SEC_ID_CONFIGURE_SHM_NOEXEC }}
     - nosuid
     {{ end }}
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 1.1.6
       - 1.1.7
       - 1.1.8
@@ -58,24 +58,24 @@ mount:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rhel7cis_rule_1_1_11 }}
+  {{ if .Vars.SEC_ID_SEPARATE_VAR_TMP }}
   /var/tmp:
     title: 1.1.12_14 | L1 | /var/tmp with mount options
     exists: true
     opts:
-    {{ if .Vars.rhel7cis_rule_1_1_12 }}
+    {{ if .Vars.SEC_ID_CONFIGURE_VAR_TMP_NODEV }}
     - noexec
     {{ end }}
-    {{ if .Vars.rhel7cis_rule_1_1_13 }}
+    {{ if .Vars.SEC_ID_CONFIGURE_VAR_TMP_NOSUID }}
     - nodev
     {{ end }}
-    {{ if .Vars.rhel7cis_rule_1_1_14 }}
+    {{ if .Vars.SEC_ID_CONFIGURE_VAR_TMP_NOEXEC }}
     - nosuid
     {{ end }}
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 1.1.12
       - 1.1.13
       - 1.1.14
@@ -86,7 +86,7 @@ mount:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rhel7cis_rule_1_1_18 }}
+  {{ if .Vars.SEC_ID_CONFIGURE_HOME_NODEV }}
   /home:
     title: 1.1.18 | L1 | /home with mount options
     exists: true
@@ -95,7 +95,7 @@ mount:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 1.1.18
       CISv8:
       - 3.3
@@ -106,14 +106,14 @@ mount:
   {{ end }}
 {{ end }}
 {{ if .Vars.rhel7cis_level2 }}
-  {{ if .Vars.rhel7cis_rule_1_1_10 }}
+  {{ if .Vars.SEC_ID_SEPARATE_VAR }}
   /var:
     title: 1.1.10 | L2 | Ensure separate partition exists for /var
     exists: true
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 1.1.10
       CISv8:
       - 4.1
@@ -121,14 +121,14 @@ mount:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rhel7cis_rule_1_1_11 }}
+  {{ if .Vars.SEC_ID_SEPARATE_VAR_TMP }}
   /var/tmp:
     title: 1.1.11 | L2 | Ensure separate partition exists for /var/tmp with mount options
     exists: true
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 1.1.11
       CISv8:
       - 3.3
@@ -137,14 +137,14 @@ mount:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rhel7cis_rule_1_1_15 }}
+  {{ if .Vars.SEC_ID_SEPARATE_VAR_LOG }}
   /var/log:
     title: 1.1.15 | L2 | Ensure separate partition exists for /var/log
     exists: true
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 1.1.15
       CISv8:
       - 4.1
@@ -153,14 +153,14 @@ mount:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rhel7cis_rule_1_1_16 }}
+  {{ if .Vars.SEC_ID_SEPARATE_VAR_LOG_AUDIT }}
   /var/log/audit:
     title: 1.1.16 | L2 |  Ensure separate partition exists for /var/log/audit
     exists: true
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 1.1.16
       CISv8:
       - 8.3
@@ -168,14 +168,14 @@ mount:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rhel7cis_rule_1_1_17 }}
+  {{ if .Vars.SEC_ID_SEPARATE_HOME }}
   /home:
     title: 1.1.17 | L2 | Ensure separate partition exists for /home with mount options
     exists: true
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 1.1.17
       CISv8:
       - 4.1

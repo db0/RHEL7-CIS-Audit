@@ -1,6 +1,6 @@
 {{ if .Vars.rhel7cis_level1 }}
 {{ if eq .Vars.rhel7cis_firewall "nftables" }}
-  {{ if .Vars.rhel7cis_rule_3_5_2_9 }}
+  {{ if .Vars.SEC_ID_ENSURE_NFTABLES_DEFAULT_DENY_FIREWALL_POLICY }}
 command:
   nft_drop_input:
    title: 3.5.2.9 | L1 | Ensure default deny firewall policy
@@ -10,7 +10,7 @@ command:
    meta:
      server: 1
      workstation: 1
-     CIS_ID: 
+     CIS_ID:
      - 3.5.2.9
      CISv8:
      - 4.4
@@ -25,7 +25,7 @@ command:
    meta:
      server: 1
      workstation: 1
-     CIS_ID: 
+     CIS_ID:
      - 3.5.2.9
      CISv8:
      - 4.4
@@ -40,7 +40,7 @@ command:
    meta:
      server: 1
      workstation: 1
-     CIS_ID: 
+     CIS_ID:
      - 3.5.2.9
      CISv8:
      - 4.4

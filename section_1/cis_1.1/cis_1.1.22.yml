@@ -1,7 +1,7 @@
 {{ if .Vars.rhel7cis_level1 }}
   {{ if .Vars.run_heavy_tests }}
 command:
-  {{ if .Vars.rhel7cis_rule_1_1_22 }}
+  {{ if .Vars.SEC_ID_WORLD_WRITABLE_STICKY_BIT }}
   sticky_bit:
     title: 1.1.22 | L1 | Ensure sticky bit is set on all world-writable directories
     exit-status: 0
@@ -11,7 +11,7 @@ command:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 1.1.22
       CISv8:
       - 3.3

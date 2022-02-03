@@ -1,16 +1,16 @@
 {{ if .Vars.rhel7cis_level1 }}
-  {{ if .Vars.rhel7cis_rule_1_5_1 }}
+  {{ if .Vars.SEC_ID_ENSURE_CORE_DUMPS_ARE_RESTRICED }}
 command:
   core_dumps_limits:
     title: 1.5.1 | L1 | Ensure core dumps are restricted | security/limits.conf
     exit-status: 0
     exec: 'grep -E "\*.*hard.*core.*0" /etc/security/limits.conf /etc/security/limits.d/*'
-    stdout: 
+    stdout:
     - '/^\/*.*\shard.*core.*0/'
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 1.5.1
       CISv8:
       - 4.1
@@ -21,12 +21,12 @@ command:
     title: 1.5.1 | L1 | Ensure core dumps are restricted | sysctl.conf
     exit-status: 0
     exec: 'grep "fs\.suid_dumpable" /etc/sysctl.conf /etc/sysctl.d/*'
-    stdout: 
+    stdout:
     - fs.suid_dumpable=0
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 1.5.1
       CISv8:
       - 4.1
@@ -40,7 +40,7 @@ kernel-param:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 1.5.1
       CISv8:
       - 4.1
@@ -56,7 +56,7 @@ service:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 1.5.1
       CISv8:
       - 4.1
@@ -73,7 +73,7 @@ file:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 1.5.1
       CISv8:
       - 4.1

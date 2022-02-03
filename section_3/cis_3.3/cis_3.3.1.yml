@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_rule_3_3_1 }}
+{{ if .Vars.SEC_ID_ENSURE_SOURCE_ROUTED_PACKETS_NOT_ACCEPTED }}
 kernel-param:
   net.ipv4.conf.all.accept_source_route:
     title: 3.3.1 | L1 | Ensure source routed packets are not accepted  | IPv4_all
@@ -6,7 +6,7 @@ kernel-param:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 3.3.1
       CISv8:
       - 4.1
@@ -19,7 +19,7 @@ kernel-param:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 3.3.1
       CISv8:
       - 4.1
@@ -33,7 +33,7 @@ kernel-param:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 3.3.1
       CISv8:
       - 4.1
@@ -46,7 +46,7 @@ kernel-param:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 3.3.1
       CISv8:
       - 4.1

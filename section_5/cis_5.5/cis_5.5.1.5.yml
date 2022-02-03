@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_rule_5_5_1_5 }}
+{{ if .Vars.SEC_ID_ENSURE_PASSWORD_CHANGE_IN_PAST }}
 command:
   passwd_chg_past:
     title: 5.5.1.5 | L1 | Ensure all users last password change date is in the past
@@ -9,7 +9,7 @@ command:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 5.5.1.5
       CISv8:
       - 5.2

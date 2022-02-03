@@ -1,14 +1,14 @@
 {{ if .Vars.rhel7cis_level1 }}
   {{ if not .Vars.rhel7cis_is_router }}
 kernel-param:
-    {{ if .Vars.rhel7cis_rule_3_2_1 }}
+    {{ if .Vars.SEC_ID_ENSURE_IP_FORWARDING_DISABLED }}
     net.ipv4.ip_forward:
       title: 3.2.1 | L1 | Ensure IP forwarding is disabled | IPv4
       value: '0'
       meta:
         server: 1
         workstation: 1
-        CIS_ID: 
+        CIS_ID:
         - 3.2.1
         CISv8:
         - 4.1
@@ -22,7 +22,7 @@ kernel-param:
       meta:
         server: 1
         workstation: 1
-        CIS_ID: 
+        CIS_ID:
         - 3.2.1
         CISv8:
         - 4.1
@@ -31,14 +31,14 @@ kernel-param:
         CISv8_IG3: true
       {{ end }}
     {{ end }}
-    {{ if .Vars.rhel7cis_rule_3_2_2 }}
+    {{ if .Vars.SEC_ID_ENSURE_PACKET_REDIRECT_DISABLED }}
     net.ipv4.conf.all.send_redirects:
       title: 3.2.2 | L1 | Ensure packet redirect sending is disabled | all
       value: '0'
       meta:
         server: 1
         workstation: 1
-        CIS_ID: 
+        CIS_ID:
         - 3.2.2
         CISv8:
         - 4.1
@@ -51,7 +51,7 @@ kernel-param:
       meta:
         server: 1
         workstation: 1
-        CIS_ID: 
+        CIS_ID:
         - 3.2.2
         CISv8:
         - 4.1

@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_rule_4_2_2_1 }}
+{{ if .Vars.SEC_ID_ENSURE_JOURNALD_TO_RSYSLOG }}
 file:
   /etc/systemd/journald.conf:
     title: 4.2.2.1 | L1 | Ensure journald is configured to send logs to rsyslog
@@ -9,7 +9,7 @@ file:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 4.2.2.1
       CISv8:
       - 8.9

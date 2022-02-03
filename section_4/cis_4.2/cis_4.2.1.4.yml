@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_rule_4_2_1_4 }}
+{{ if .Vars.SEC_ID_ENSURE_LOGGING_CONFIGURED }}
 file:
   /etc/rsyslog.conf:
     title: 4.2.1.4 | L1 | Ensure logging is configured
@@ -23,7 +23,7 @@ file:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 4.2.1.4
       CISv8:
       - 8.2

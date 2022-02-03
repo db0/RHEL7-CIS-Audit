@@ -1,5 +1,5 @@
 {{ if .Vars.rhel7cis_level1 }}
-  {{ if .Vars.rhel7cis_rule_5_4_3 }}
+  {{ if .Vars.SEC_ID_ENSURE_PASSWORD_HASH_SHA512 }}
 file:
   /etc/pam.d/password-auth:
     title: 5.4.3 | L1 | Ensure password hashing algorithm is SHA-512 | password-auth
@@ -10,7 +10,7 @@ file:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 5.4.3
       CISv8:
       - 3.11
@@ -26,7 +26,7 @@ file:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 5.4.3
       CISv8:
       - 3.11

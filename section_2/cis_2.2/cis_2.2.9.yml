@@ -1,6 +1,6 @@
 {{ if not .Vars.rhel7cis_httpd_server }}
   {{ if .Vars.rhel7cis_level1 }}
-    {{ if .Vars.rhel7cis_rule_2_2_9 }}
+    {{ if .Vars.SEC_ID_HTTP_SERVER_NOT_INSTALLED }}
 package:
   httpd:
     title: 2.2.9 | L1 | Ensure HTTP Server is not installed
@@ -8,7 +8,7 @@ package:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 2.2.9
       CISv8:
       - 4.8

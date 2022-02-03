@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_rule_4_1_10 }}
+{{ if .Vars.SEC_ID_ENSURE_UNAUTH_FILE_ACCESS_COLLECTED }}
 command:
   auditd_access_cnf:
     title: 4.1.10 | L2 | Ensure unsuccessful unauthorized file access attempts are collected | Conf
@@ -12,7 +12,7 @@ command:
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 4.1.10
       CISv8:
       - 8.5
@@ -31,7 +31,7 @@ command:
     meta:
       server: 2
       workstation: 2
-      CIS_ID: 
+      CIS_ID:
       - 4.1.10
       CISv8:
       - 8.5

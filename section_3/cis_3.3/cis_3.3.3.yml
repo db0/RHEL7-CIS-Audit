@@ -1,4 +1,4 @@
-{{ if .Vars.rhel7cis_rule_3_3_3 }}
+{{ if .Vars.SEC_ID_ENSURE_SECURE_ICMP_REDIRECTS_NOT_ACCEPTED }}
 kernel-param:
   net.ipv4.conf.all.secure_redirects:
     title: 3.3.3 | L1 | Ensure secure ICMP redirects are not accepted | all
@@ -6,7 +6,7 @@ kernel-param:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 3.3.3
       CISv8:
       - 4.1
@@ -19,7 +19,7 @@ kernel-param:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 3.3.3
       CISv8:
       - 4.1

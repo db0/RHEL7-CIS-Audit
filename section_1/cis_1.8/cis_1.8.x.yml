@@ -1,7 +1,7 @@
 {{ if .Vars.rhel7cis_level2 }}
   {{ if not .Vars.rhel7cis_gui }}
 package:
-  {{ if .Vars.rhel7cis_rule_1_8_1 }}
+  {{ if .Vars.SEC_ID_ENSURE_GDM_IS_REMOVED }}
   gdm:
     title: 1.8.1 | L2 | Ensure GNOME Display Manager is removed
     installed: false
@@ -9,7 +9,7 @@ package:
     meta:
       server: 2
       workstation: NA
-      CIS_ID: 
+      CIS_ID:
       - 1.8.1
       CISv8:
       - 4.8
@@ -22,7 +22,7 @@ package:
 {{ if .Vars.rhel7cis_level1 }}
   {{ if .Vars.rhel7cis_gui }}
 file:
-  {{ if .Vars.rhel7cis_rule_1_8_2 }}
+  {{ if .Vars.SEC_ID_ENSURE_GDM_LOGIN_BANNER_CONFIGURED }}
   /etc/dconf/profile/gdm:
     title: 1.8.2 | L1 | Ensure GDM login banner is configured | profile
     exists: true
@@ -33,7 +33,7 @@ file:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 1.8.2
       CISv8:
       - 4.1
@@ -50,7 +50,7 @@ file:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 1.8.2
       CISv8:
       - 4.1
@@ -58,7 +58,7 @@ file:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rhel7cis_rule_1_8_3 }}
+  {{ if .Vars.SEC_ID_ENSURE_LAST_LOGGED_USER_DISPLAYED }}
   /etc/dconf/db/gdm.d/00-login-screen:
     title: 1.8.3 | L1 | Ensure GDM is removed or login is configured | login
     exists: true
@@ -68,7 +68,7 @@ file:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 1.8.3
       CISv8:
       - 4.1
@@ -76,7 +76,7 @@ file:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rhel7cis_rule_1_8_4 }}
+  {{ if .Vars.SEC_ID_ENSURE_XDCMP_NOT_ENABLED }}
   /etc/gdm/custom.conf:
     title: 1.8.4 | L1 | Ensure XDCMP is not enabled
     exists: true
@@ -85,7 +85,7 @@ file:
     meta:
       server: 1
       workstation: 1
-      CIS_ID: 
+      CIS_ID:
       - 1.8.3
       CISv8:
       - 4.8
